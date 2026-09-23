@@ -1,4 +1,4 @@
-import MathOptInterface as MOI
+6+import MathOptInterface as MOI
 
 include(joinpath(@__DIR__, "src", "data.jl"))
 include(joinpath(@__DIR__, "src", "model.jl"))

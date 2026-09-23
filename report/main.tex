@@ -1,0 +1,101 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb,booktabs,enumitem,hyperref,graphicx,array}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\definecolor{Ink}{HTML}{17212B}
+\definecolor{Slate}{HTML}{34495E}
+\definecolor{Sky}{HTML}{2D9CDB}
+\definecolor{Mint}{HTML}{27AE60}
+\definecolor{Sand}{HTML}{F4EDE4}
+\definecolor{Paper}{HTML}{FBFCFD}
+\definecolor{Accent}{HTML}{C0392B}
+
+\pagecolor{Paper}
+\color{Ink}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=Sky,
+	urlcolor=Sky,
+	citecolor=Sky,
+	pdftitle={Part A Report},
+	pdfauthor={Numerical Optimisation Project}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{Slate}{Numerical Optimisation Project}}
+\fancyhead[R]{\textcolor{Slate}{Part A}}
+\fancyfoot[C]{\textcolor{Slate}{\thepage}}
+\setlength{\headheight}{24pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{Sand}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{Ink}}{}{0pt}{}
+\titleformat{\subsection}{\large\bfseries\color{Slate}}{}{0pt}{}
+\titleformat{\subsubsection}{\bfseries\color{Ink}}{}{0pt}{}
+
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
+\setlength{\parskip}{0.55em}
+\setlength{\parindent}{0pt}
+
+\newcommand{\resultcard}[2]{%
+\begin{tikzpicture}
+	\node[rounded corners=10pt, fill=white, draw=Sand, line width=0.8pt, inner sep=10pt, minimum width=0.3\linewidth] (box) {\begin{minipage}{0.85\linewidth}\centering\textcolor{Slate}{#1}\\[0.35em]{\Large\bfseries #2}\end{minipage}};
+\end{tikzpicture}}
+
+\begin{document}
+
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+	\fill[Ink] (current page.north west) rectangle ([yshift=-4.5cm]current page.north east);
+	\fill[Sky] ([yshift=-4.5cm]current page.north west) rectangle ([yshift=-4.8cm]current page.north east);
+	\fill[Sand] ([yshift=-18.4cm]current page.north west) rectangle (current page.south east);
+\end{tikzpicture}
+
+\vspace*{2.1cm}
+{\color{white}\huge\bfseries Numerical Optimisation Project\par}
+\vspace{0.55cm}
+{\color{white}\LARGE Part A: Farm Planning Model\par}
+\vspace{1.3cm}
+
+\begin{minipage}{0.92\textwidth}
+\color{white}
+This report presents the Part A farm-planning model: a JuMP/Gurobi optimisation that allocates crops, pumping, hired labour, and sales to maximize gross margin under land, water, labour, and market constraints.
+\end{minipage}
+
+\vfill
+\begin{minipage}{0.92\textwidth}
+\color{white}
+\textbf{Focus of this report}\par
+\smallskip
+Clear formulation, clean implementation blocks, and result graphs that can be discussed quickly during an oral exam.
+\end{minipage}
+
+\vspace*{1.7cm}
+\end{titlepage}
+
+\clearpage
+\hypersetup{pageanchor=true}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\tableofcontents
+\newpage
+
+\input{sections/partA}
+
+\end{document}
